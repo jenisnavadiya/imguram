@@ -1,30 +1,20 @@
-package com.jenis.imguram
+package com.jenis.imguram.ui.home
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.HORIZONTAL
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import androidx.recyclerview.widget.RecyclerView.SCROLL_AXIS_HORIZONTAL
+import com.jenis.imguram.R
 import com.jenis.imguram.databinding.ActivityMainBinding
-import com.jenis.imguram.databinding.FragmentFeedBinding
-import com.jenis.imguram.ui.feed.FeedViewModel
-import com.jenis.imguram.ui.stories.StoriesRecyclerAdapter
-import com.jenis.imguram.ui.stories.StoriesViewModel
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private  val storiesViewModel by viewModels<StoriesViewModel>()
+    private  val storiesViewModel by viewModels<HomeViewModel>()
     private val storiesAdapter =  StoriesRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,5 +1,6 @@
-package com.jenis.imguram.ui.stories
+package com.jenis.imguram.ui.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.jenis.imguram.R
 import com.jenis.imguram.databinding.ListItemStoryImageBinding
+import com.jenis.imguram.ui.story.StoryActivity
 import com.jenis.libimgur.models.TagsResponse
 
 class StoriesRecyclerAdapter() :
@@ -43,6 +45,13 @@ class StoriesRecyclerAdapter() :
         holder.binding.imageView.load("https://i.imgur.com/${image.backgroundHash}.jpg") {
             placeholder(R.drawable.placeholder_image)
             error(R.drawable.placeholder_image)
+        }
+        holder.binding.root.apply {
+            setOnClickListener {
+                 val intent = Intent(context, StoryActivity::class.java)
+                intent.putExtra("tag", image.name)
+                context.startActivity(intent)
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-package com.jenis.imguram.ui.stories
+package com.jenis.imguram.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +8,7 @@ import com.jenis.libimgur.models.TagsResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class StoriesViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     private  val repo = ImgurRepository()
     private val _stories = MutableLiveData<List<TagsResponse.Data.Tag?>>()
 
