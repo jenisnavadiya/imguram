@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    android:layout_margin="6dp"
     android:layout_height="wrap_content">
 
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:orientation="vertical">
+     <ImageView
+         android:id="@+id/imageView"
+         android:layout_width="match_parent"
+         android:layout_height="350dp"
+         android:scaleType="fitCenter"
+         />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:scaleType="fitCenter"
-        />
+     <TextView
+         android:id="@+id/captionTextView"
+         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+         android:padding="5dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Title Here"
+         />
 
-    <TextView
-        android:id="@+id/captionTextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:padding="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Title Here"
-        />
-</LinearLayout>
+ </LinearLayout>
+
+</androidx.cardview.widget.CardView>
