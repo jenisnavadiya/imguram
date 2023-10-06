@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object ImgurClient {
 
    // TODO(jenis): [API_KEY] should be Empty when push
-    private const val API_KEY = "89822a7fd6fcbaf"
+    private const val API_KEY = ""
 
     private val httpClient: OkHttpClient by lazy {
         OkHttpClient.Builder().addInterceptor {

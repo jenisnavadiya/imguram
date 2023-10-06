@@ -2,6 +2,7 @@ package com.jenis.imguram.ui.story
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,8 +31,10 @@ class StoryActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        binding.storyPbar.visibility = ProgressBar.VISIBLE
         storyViewModel.stories.observe(this) {
             storyAdapter.submitList(it)
+            binding.storyPbar.visibility = ProgressBar.INVISIBLE
         }
     }
 }
